@@ -4,7 +4,7 @@ items:
   kind: ImageStream
   metadata:
     name: nexus3
-    namespace: ak-nexus
+    namespace: ak-ci
   spec:
     lookupPolicy:
       local: false
@@ -30,7 +30,7 @@ items:
     labels:
       app: nexus3
     name: nexus3
-    namespace: ak-nexus
+    namespace: ak-ci
   spec:
     replicas: 1
     revisionHistoryLimit: 10
@@ -98,13 +98,13 @@ items:
         from:
           kind: ImageStreamTag
           name: nexus3:latest
-          namespace: ak-nexus
+          namespace: ak-ci
       type: ImageChange
 - apiVersion: v1
   kind: PersistentVolumeClaim
   metadata:
     name: nexus-data
-    namespace: ak-nexus
+    namespace: ak-ci
   spec:
     accessModes:
     - ReadWriteMany
@@ -124,7 +124,7 @@ items:
     labels:
       app: nexus3
     name: nexus3
-    namespace: ak-nexus
+    namespace: ak-ci
   spec:
     ports:
     - name: 8081-tcp
@@ -142,7 +142,7 @@ items:
     labels:
       app: nexus3
     name: nexus3
-    namespace: ak-nexus
+    namespace: ak-ci
   spec:
     host: nexus3-ak-nexus.apps.fra.example.opentlc.com
     port:
@@ -160,7 +160,7 @@ items:
     labels:
       app: nexus3
     name: nexus-registry
-    namespace: ak-nexus
+    namespace: ak-ci
   spec:
     ports:
     - name: 5000-tcp
@@ -178,7 +178,7 @@ items:
     labels:
       app: nexus3
     name: nexus-registry
-    namespace: ak-nexus
+    namespace: ak-ci
   spec:
     host: nexus-registry-ak-nexus.apps.fra.example.opentlc.com
     port:
