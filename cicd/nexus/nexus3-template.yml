@@ -144,7 +144,7 @@ items:
     name: nexus3
     namespace: ak-ci
   spec:
-    host: nexus3-ak-nexus.apps.fra.example.opentlc.com
+    host: nexus3-ak-ci.apps.fra.example.opentlc.com
     port:
       targetPort: 8081-tcp
     tls:
@@ -180,7 +180,7 @@ items:
     name: nexus-registry
     namespace: ak-ci
   spec:
-    host: nexus-registry-ak-nexus.apps.fra.example.opentlc.com
+    host: nexus-registry-ak-ci.apps.fra.example.opentlc.com
     port:
       targetPort: 5000-tcp
     tls:
